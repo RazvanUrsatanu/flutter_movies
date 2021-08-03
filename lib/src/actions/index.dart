@@ -21,7 +21,6 @@ part 'create_review.dart';
 
 part 'get_reviews.dart';
 
-
 abstract class AppAction {}
 
 abstract class ErrorAction implements AppAction {
@@ -29,6 +28,5 @@ abstract class ErrorAction implements AppAction {
 
   StackTrace get stackTrace;
 }
-
 
 typedef ActionResult = void Function(AppAction action);

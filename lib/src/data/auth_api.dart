@@ -29,29 +29,27 @@ class AuthApi {
 
   Future<AppUser?> register(String email, String password) async {
     UserCredential result;
-      try {
-        result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      } on FirebaseAuthException catch (e) {
-        if (e.code == 'email-already-in-use') {
-          final AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
-          result = await _auth.signInWithCredential(credential);
-          //print('HERE');
-          print(result.user);
-        } else {
-          rethrow;
-        }
+    try {
+      result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'email-already-in-use') {
+        final AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+        result = await _auth.signInWithCredential(credential);
+        //print('HERE');
+        print(result.user);
+      } else {
+        rethrow;
       }
-        final AppUser user = AppUser((AppUserBuilder b) {
-          b
-            ..userId = result.user!.uid
-            ..username = email
-                .split('@')
-                .first
-            ..photo = result.user!.photoURL
-            ..email = email;
-        });
-        await _firestore.doc('users/${user.userId}').set(user.json);
-        return user;
+    }
+    final AppUser user = AppUser((AppUserBuilder b) {
+      b
+        ..userId = result.user!.uid
+        ..username = email.split('@').first
+        ..photo = result.user!.photoURL
+        ..email = email;
+    });
+    await _firestore.doc('users/${user.userId}').set(user.json);
+    return user;
   }
 
   Future<String> updateProfileUrl(String uid, String path) async {

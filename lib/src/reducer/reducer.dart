@@ -4,8 +4,8 @@ import 'package:redux/redux.dart';
 
 Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
   (AppState state, dynamic action) {
-  print(action);
-  return state;
+    print(action);
+    return state;
   },
   TypedReducer<AppState, GetMovies>(_getMovies),
   TypedReducer<AppState, GetMoviesSuccessful>(_getMoviesSuccessful),

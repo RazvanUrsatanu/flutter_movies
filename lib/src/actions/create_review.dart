@@ -9,4 +9,3 @@ class CreateReview with _$CreateReview implements AppAction {
   @Implements(ErrorAction)
   const factory CreateReview.error(Object error, StackTrace stackTrace) = CreateReviewError;
 }
-

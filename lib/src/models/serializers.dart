@@ -6,7 +6,7 @@ import 'package:movies_redux/src/models/index.dart';
 part 'serializers.g.dart';
 
 @SerializersFor(<Type>[
-     AppState,
+  AppState,
 ])
 Serializers serializers = (_$serializers.toBuilder() //
       ..addPlugin(StandardJsonPlugin()))

@@ -56,10 +56,10 @@ class HomePage extends StatelessWidget {
                       icon: const Icon(Icons.add),
                     ),
                   IconButton(
-                      onPressed: () {
-                        StoreProvider.of<AppState>(context).dispatch(const SignOut());
-                      },
-                      icon: const Icon(Icons.logout),
+                    onPressed: () {
+                      StoreProvider.of<AppState>(context).dispatch(const SignOut());
+                    },
+                    icon: const Icon(Icons.logout),
                   ),
                 ],
               ),
