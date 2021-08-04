@@ -9,7 +9,7 @@ part of actions;
 
 T _$identity<T>(T value) => value;
 
-final UnsupportedError _privateConstructorUsedError = UnsupportedError(
+final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
@@ -35,7 +35,7 @@ class _$GetMoviesTearOff {
 }
 
 /// @nodoc
-const _$GetMoviesTearOff $GetMovies = _$GetMoviesTearOff();
+const $GetMovies = _$GetMoviesTearOff();
 
 /// @nodoc
 mixin _$GetMovies {
@@ -95,7 +95,7 @@ abstract class $GetMoviesStartCopyWith<$Res> {
 class _$GetMoviesStartCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesStartCopyWith<$Res> {
   _$GetMoviesStartCopyWithImpl(GetMoviesStart _value, $Res Function(GetMoviesStart) _then)
-      : super(_value, (GetMovies v) => _then(v as GetMoviesStart));
+      : super(_value, (v) => _then(v as GetMoviesStart));
 
   @override
   GetMoviesStart get _value => super._value as GetMoviesStart;
@@ -183,7 +183,7 @@ abstract class $GetMoviesSuccessfulCopyWith<$Res> {
 class _$GetMoviesSuccessfulCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesSuccessfulCopyWith<$Res> {
   _$GetMoviesSuccessfulCopyWithImpl(GetMoviesSuccessful _value, $Res Function(GetMoviesSuccessful) _then)
-      : super(_value, (GetMovies v) => _then(v as GetMoviesSuccessful));
+      : super(_value, (v) => _then(v as GetMoviesSuccessful));
 
   @override
   GetMoviesSuccessful get _value => super._value as GetMoviesSuccessful;
@@ -297,7 +297,7 @@ abstract class $GetMoviesErrorCopyWith<$Res> {
 class _$GetMoviesErrorCopyWithImpl<$Res> extends _$GetMoviesCopyWithImpl<$Res>
     implements $GetMoviesErrorCopyWith<$Res> {
   _$GetMoviesErrorCopyWithImpl(GetMoviesError _value, $Res Function(GetMoviesError) _then)
-      : super(_value, (GetMovies v) => _then(v as GetMoviesError));
+      : super(_value, (v) => _then(v as GetMoviesError));
 
   @override
   GetMoviesError get _value => super._value as GetMoviesError;
@@ -426,7 +426,7 @@ class _$SelectMovieTearOff {
 }
 
 /// @nodoc
-const _$SelectMovieTearOff $SelectMovie = _$SelectMovieTearOff();
+const $SelectMovie = _$SelectMovieTearOff();
 
 /// @nodoc
 mixin _$SelectMovie {
@@ -474,7 +474,7 @@ abstract class $SelectMovie$CopyWith<$Res> implements $SelectMovieCopyWith<$Res>
 /// @nodoc
 class _$SelectMovie$CopyWithImpl<$Res> extends _$SelectMovieCopyWithImpl<$Res> implements $SelectMovie$CopyWith<$Res> {
   _$SelectMovie$CopyWithImpl(SelectMovie$ _value, $Res Function(SelectMovie$) _then)
-      : super(_value, (SelectMovie v) => _then(v as SelectMovie$));
+      : super(_value, (v) => _then(v as SelectMovie$));
 
   @override
   SelectMovie$ get _value => super._value as SelectMovie$;
@@ -557,7 +557,7 @@ class _$RegisterTearOff {
 }
 
 /// @nodoc
-const _$RegisterTearOff $Register = _$RegisterTearOff();
+const $Register = _$RegisterTearOff();
 
 /// @nodoc
 mixin _$Register {
@@ -617,7 +617,7 @@ abstract class $RegisterStartCopyWith<$Res> {
 /// @nodoc
 class _$RegisterStartCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res> implements $RegisterStartCopyWith<$Res> {
   _$RegisterStartCopyWithImpl(RegisterStart _value, $Res Function(RegisterStart) _then)
-      : super(_value, (Register v) => _then(v as RegisterStart));
+      : super(_value, (v) => _then(v as RegisterStart));
 
   @override
   RegisterStart get _value => super._value as RegisterStart;
@@ -752,7 +752,7 @@ abstract class $RegisterSuccessfulCopyWith<$Res> {
 class _$RegisterSuccessfulCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
     implements $RegisterSuccessfulCopyWith<$Res> {
   _$RegisterSuccessfulCopyWithImpl(RegisterSuccessful _value, $Res Function(RegisterSuccessful) _then)
-      : super(_value, (Register v) => _then(v as RegisterSuccessful));
+      : super(_value, (v) => _then(v as RegisterSuccessful));
 
   @override
   RegisterSuccessful get _value => super._value as RegisterSuccessful;
@@ -865,7 +865,7 @@ abstract class $RegisterErrorCopyWith<$Res> {
 /// @nodoc
 class _$RegisterErrorCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res> implements $RegisterErrorCopyWith<$Res> {
   _$RegisterErrorCopyWithImpl(RegisterError _value, $Res Function(RegisterError) _then)
-      : super(_value, (Register v) => _then(v as RegisterError));
+      : super(_value, (v) => _then(v as RegisterError));
 
   @override
   RegisterError get _value => super._value as RegisterError;
@@ -1004,7 +1004,7 @@ class _$InitializeAppTearOff {
 }
 
 /// @nodoc
-const _$InitializeAppTearOff $InitializeApp = _$InitializeAppTearOff();
+const $InitializeApp = _$InitializeAppTearOff();
 
 /// @nodoc
 mixin _$InitializeApp {
@@ -1065,7 +1065,7 @@ abstract class $InitializeAppStartCopyWith<$Res> {
 class _$InitializeAppStartCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res>
     implements $InitializeAppStartCopyWith<$Res> {
   _$InitializeAppStartCopyWithImpl(InitializeAppStart _value, $Res Function(InitializeAppStart) _then)
-      : super(_value, (InitializeApp v) => _then(v as InitializeAppStart));
+      : super(_value, (v) => _then(v as InitializeAppStart));
 
   @override
   InitializeAppStart get _value => super._value as InitializeAppStart;
@@ -1153,7 +1153,7 @@ abstract class $InitializeAppSuccessfulCopyWith<$Res> {
 class _$InitializeAppSuccessfulCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res>
     implements $InitializeAppSuccessfulCopyWith<$Res> {
   _$InitializeAppSuccessfulCopyWithImpl(InitializeAppSuccessful _value, $Res Function(InitializeAppSuccessful) _then)
-      : super(_value, (InitializeApp v) => _then(v as InitializeAppSuccessful));
+      : super(_value, (v) => _then(v as InitializeAppSuccessful));
 
   @override
   InitializeAppSuccessful get _value => super._value as InitializeAppSuccessful;
@@ -1267,7 +1267,7 @@ abstract class $InitializeAppErrorCopyWith<$Res> {
 class _$InitializeAppErrorCopyWithImpl<$Res> extends _$InitializeAppCopyWithImpl<$Res>
     implements $InitializeAppErrorCopyWith<$Res> {
   _$InitializeAppErrorCopyWithImpl(InitializeAppError _value, $Res Function(InitializeAppError) _then)
-      : super(_value, (InitializeApp v) => _then(v as InitializeAppError));
+      : super(_value, (v) => _then(v as InitializeAppError));
 
   @override
   InitializeAppError get _value => super._value as InitializeAppError;
@@ -1405,7 +1405,7 @@ class _$SignOutTearOff {
 }
 
 /// @nodoc
-const _$SignOutTearOff $SignOut = _$SignOutTearOff();
+const $SignOut = _$SignOutTearOff();
 
 /// @nodoc
 mixin _$SignOut {
@@ -1464,7 +1464,7 @@ abstract class $SignOutStartCopyWith<$Res> {
 /// @nodoc
 class _$SignOutStartCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOutStartCopyWith<$Res> {
   _$SignOutStartCopyWithImpl(SignOutStart _value, $Res Function(SignOutStart) _then)
-      : super(_value, (SignOut v) => _then(v as SignOutStart));
+      : super(_value, (v) => _then(v as SignOutStart));
 
   @override
   SignOutStart get _value => super._value as SignOutStart;
@@ -1551,7 +1551,7 @@ abstract class $SignOutSuccessfulCopyWith<$Res> {
 class _$SignOutSuccessfulCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
     implements $SignOutSuccessfulCopyWith<$Res> {
   _$SignOutSuccessfulCopyWithImpl(SignOutSuccessful _value, $Res Function(SignOutSuccessful) _then)
-      : super(_value, (SignOut v) => _then(v as SignOutSuccessful));
+      : super(_value, (v) => _then(v as SignOutSuccessful));
 
   @override
   SignOutSuccessful get _value => super._value as SignOutSuccessful;
@@ -1638,7 +1638,7 @@ abstract class $SignOutErrorCopyWith<$Res> {
 /// @nodoc
 class _$SignOutErrorCopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOutErrorCopyWith<$Res> {
   _$SignOutErrorCopyWithImpl(SignOutError _value, $Res Function(SignOutError) _then)
-      : super(_value, (SignOut v) => _then(v as SignOutError));
+      : super(_value, (v) => _then(v as SignOutError));
 
   @override
   SignOutError get _value => super._value as SignOutError;
@@ -1779,7 +1779,7 @@ class _$UpdateProfileUrlTearOff {
 }
 
 /// @nodoc
-const _$UpdateProfileUrlTearOff $UpdateProfileUrl = _$UpdateProfileUrlTearOff();
+const $UpdateProfileUrl = _$UpdateProfileUrlTearOff();
 
 /// @nodoc
 mixin _$UpdateProfileUrl {
@@ -1841,7 +1841,7 @@ abstract class $UpdateProfileUrlStartCopyWith<$Res> {
 class _$UpdateProfileUrlStartCopyWithImpl<$Res> extends _$UpdateProfileUrlCopyWithImpl<$Res>
     implements $UpdateProfileUrlStartCopyWith<$Res> {
   _$UpdateProfileUrlStartCopyWithImpl(UpdateProfileUrlStart _value, $Res Function(UpdateProfileUrlStart) _then)
-      : super(_value, (UpdateProfileUrl v) => _then(v as UpdateProfileUrlStart));
+      : super(_value, (v) => _then(v as UpdateProfileUrlStart));
 
   @override
   UpdateProfileUrlStart get _value => super._value as UpdateProfileUrlStart;
@@ -1957,7 +1957,7 @@ class _$UpdateProfileUrlSuccessfulCopyWithImpl<$Res> extends _$UpdateProfileUrlC
     implements $UpdateProfileUrlSuccessfulCopyWith<$Res> {
   _$UpdateProfileUrlSuccessfulCopyWithImpl(
       UpdateProfileUrlSuccessful _value, $Res Function(UpdateProfileUrlSuccessful) _then)
-      : super(_value, (UpdateProfileUrl v) => _then(v as UpdateProfileUrlSuccessful));
+      : super(_value, (v) => _then(v as UpdateProfileUrlSuccessful));
 
   @override
   UpdateProfileUrlSuccessful get _value => super._value as UpdateProfileUrlSuccessful;
@@ -2071,7 +2071,7 @@ abstract class $UpdateProfileUrlErrorCopyWith<$Res> {
 class _$UpdateProfileUrlErrorCopyWithImpl<$Res> extends _$UpdateProfileUrlCopyWithImpl<$Res>
     implements $UpdateProfileUrlErrorCopyWith<$Res> {
   _$UpdateProfileUrlErrorCopyWithImpl(UpdateProfileUrlError _value, $Res Function(UpdateProfileUrlError) _then)
-      : super(_value, (UpdateProfileUrl v) => _then(v as UpdateProfileUrlError));
+      : super(_value, (v) => _then(v as UpdateProfileUrlError));
 
   @override
   UpdateProfileUrlError get _value => super._value as UpdateProfileUrlError;
@@ -2211,7 +2211,7 @@ class _$CreateReviewTearOff {
 }
 
 /// @nodoc
-const _$CreateReviewTearOff $CreateReview = _$CreateReviewTearOff();
+const $CreateReview = _$CreateReviewTearOff();
 
 /// @nodoc
 mixin _$CreateReview {
@@ -2273,7 +2273,7 @@ abstract class $CreateReviewStartCopyWith<$Res> {
 class _$CreateReviewStartCopyWithImpl<$Res> extends _$CreateReviewCopyWithImpl<$Res>
     implements $CreateReviewStartCopyWith<$Res> {
   _$CreateReviewStartCopyWithImpl(CreateReviewStart _value, $Res Function(CreateReviewStart) _then)
-      : super(_value, (CreateReview v) => _then(v as CreateReviewStart));
+      : super(_value, (v) => _then(v as CreateReviewStart));
 
   @override
   CreateReviewStart get _value => super._value as CreateReviewStart;
@@ -2386,7 +2386,7 @@ abstract class $CreateReviewSuccessfulCopyWith<$Res> {
 class _$CreateReviewSuccessfulCopyWithImpl<$Res> extends _$CreateReviewCopyWithImpl<$Res>
     implements $CreateReviewSuccessfulCopyWith<$Res> {
   _$CreateReviewSuccessfulCopyWithImpl(CreateReviewSuccessful _value, $Res Function(CreateReviewSuccessful) _then)
-      : super(_value, (CreateReview v) => _then(v as CreateReviewSuccessful));
+      : super(_value, (v) => _then(v as CreateReviewSuccessful));
 
   @override
   CreateReviewSuccessful get _value => super._value as CreateReviewSuccessful;
@@ -2474,7 +2474,7 @@ abstract class $CreateReviewErrorCopyWith<$Res> {
 class _$CreateReviewErrorCopyWithImpl<$Res> extends _$CreateReviewCopyWithImpl<$Res>
     implements $CreateReviewErrorCopyWith<$Res> {
   _$CreateReviewErrorCopyWithImpl(CreateReviewError _value, $Res Function(CreateReviewError) _then)
-      : super(_value, (CreateReview v) => _then(v as CreateReviewError));
+      : super(_value, (v) => _then(v as CreateReviewError));
 
   @override
   CreateReviewError get _value => super._value as CreateReviewError;
@@ -2614,7 +2614,7 @@ class _$GetReviewsTearOff {
 }
 
 /// @nodoc
-const _$GetReviewsTearOff $GetReviews = _$GetReviewsTearOff();
+const $GetReviews = _$GetReviewsTearOff();
 
 /// @nodoc
 mixin _$GetReviews {
@@ -2674,7 +2674,7 @@ abstract class $GetReviewsStartCopyWith<$Res> {
 class _$GetReviewsStartCopyWithImpl<$Res> extends _$GetReviewsCopyWithImpl<$Res>
     implements $GetReviewsStartCopyWith<$Res> {
   _$GetReviewsStartCopyWithImpl(GetReviewsStart _value, $Res Function(GetReviewsStart) _then)
-      : super(_value, (GetReviews v) => _then(v as GetReviewsStart));
+      : super(_value, (v) => _then(v as GetReviewsStart));
 
   @override
   GetReviewsStart get _value => super._value as GetReviewsStart;
@@ -2762,7 +2762,7 @@ abstract class $GetReviewsSuccessfulCopyWith<$Res> {
 class _$GetReviewsSuccessfulCopyWithImpl<$Res> extends _$GetReviewsCopyWithImpl<$Res>
     implements $GetReviewsSuccessfulCopyWith<$Res> {
   _$GetReviewsSuccessfulCopyWithImpl(GetReviewsSuccessful _value, $Res Function(GetReviewsSuccessful) _then)
-      : super(_value, (GetReviews v) => _then(v as GetReviewsSuccessful));
+      : super(_value, (v) => _then(v as GetReviewsSuccessful));
 
   @override
   GetReviewsSuccessful get _value => super._value as GetReviewsSuccessful;
@@ -2876,7 +2876,7 @@ abstract class $GetReviewsErrorCopyWith<$Res> {
 class _$GetReviewsErrorCopyWithImpl<$Res> extends _$GetReviewsCopyWithImpl<$Res>
     implements $GetReviewsErrorCopyWith<$Res> {
   _$GetReviewsErrorCopyWithImpl(GetReviewsError _value, $Res Function(GetReviewsError) _then)
-      : super(_value, (GetReviews v) => _then(v as GetReviewsError));
+      : super(_value, (v) => _then(v as GetReviewsError));
 
   @override
   GetReviewsError get _value => super._value as GetReviewsError;

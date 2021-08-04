@@ -15,6 +15,8 @@ abstract class Review implements Built<Review, ReviewBuilder> {
 
   int get movieId;
 
+  DateTime get createdAt;
+
   Map<String, dynamic> get json => serializers.serializeWith(serializer, this)! as Map<String, dynamic>;
 
   static Serializer<Review> get serializer => _$reviewSerializer;

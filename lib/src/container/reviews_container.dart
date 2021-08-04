@@ -11,9 +11,10 @@ class ReviewsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, List<Review>>(
-      converter: (Store<AppState> store) {
-        return store.state.reviews.asList();
-      },
+      converter: (Store<AppState> store) => store.state.reviews.toList()
+        ..sort((Review a, Review b) {
+          return b.createdAt.compareTo(a.createdAt);
+        }),
       builder: builder,
     );
   }

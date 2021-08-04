@@ -37,7 +37,8 @@ class MovieApi {
         ..id = ref.id
         ..uid = uid
         ..comment = comment
-        ..movieId = movieId;
+        ..movieId = movieId
+        ..createdAt = DateTime.now().toUtc();
     });
     await ref.set(review.json);
   }

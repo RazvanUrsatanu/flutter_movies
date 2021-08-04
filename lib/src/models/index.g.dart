@@ -49,7 +49,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current! as String;
+      final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
@@ -65,13 +65,13 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
               specifiedType: const FullType(BuiltList, const [const FullType(Movie)]))! as BuiltList<Object?>);
           break;
         case 'isLoading':
-          result.isLoading = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
+          result.isLoading = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
         case 'selectedMovie':
           result.selectedMovie = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'page':
-          result.page = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.page = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
       }
     }
@@ -111,24 +111,24 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current! as String;
+      final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'title':
-          result.title = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'medium_cover_image':
-          result.image = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.image = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'summary':
-          result.summary = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.summary = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'large_cover_image':
-          result.largeImage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.largeImage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -169,21 +169,21 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current! as String;
+      final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'username':
-          result.username = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'userId':
-          result.userId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.userId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'photo':
           result.photo = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
-          result.email = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -209,6 +209,8 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
       serializers.serialize(object.comment, specifiedType: const FullType(String)),
       'movieId',
       serializers.serialize(object.movieId, specifiedType: const FullType(int)),
+      'createdAt',
+      serializers.serialize(object.createdAt, specifiedType: const FullType(DateTime)),
     ];
 
     return result;
@@ -221,21 +223,24 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current! as String;
+      final key = iterator.current as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'comment':
-          result.comment = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
+          result.comment = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'movieId':
-          result.movieId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
+          result.movieId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
+          break;
+        case 'createdAt':
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime;
           break;
       }
     }
@@ -636,14 +641,19 @@ class _$Review extends Review {
   final String comment;
   @override
   final int movieId;
+  @override
+  final DateTime createdAt;
 
   factory _$Review([void Function(ReviewBuilder)? updates]) => (new ReviewBuilder()..update(updates)).build();
 
-  _$Review._({required this.uid, required this.id, required this.comment, required this.movieId}) : super._() {
+  _$Review._(
+      {required this.uid, required this.id, required this.comment, required this.movieId, required this.createdAt})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid');
     BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id');
     BuiltValueNullFieldError.checkNotNull(comment, 'Review', 'comment');
     BuiltValueNullFieldError.checkNotNull(movieId, 'Review', 'movieId');
+    BuiltValueNullFieldError.checkNotNull(createdAt, 'Review', 'createdAt');
   }
 
   @override
@@ -659,12 +669,14 @@ class _$Review extends Review {
         uid == other.uid &&
         id == other.id &&
         comment == other.comment &&
-        movieId == other.movieId;
+        movieId == other.movieId &&
+        createdAt == other.createdAt;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc($jc(0, uid.hashCode), id.hashCode), comment.hashCode), movieId.hashCode));
+    return $jf(
+        $jc($jc($jc($jc($jc(0, uid.hashCode), id.hashCode), comment.hashCode), movieId.hashCode), createdAt.hashCode));
   }
 
   @override
@@ -673,7 +685,8 @@ class _$Review extends Review {
           ..add('uid', uid)
           ..add('id', id)
           ..add('comment', comment)
-          ..add('movieId', movieId))
+          ..add('movieId', movieId)
+          ..add('createdAt', createdAt))
         .toString();
   }
 }
@@ -697,6 +710,10 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
   int? get movieId => _$this._movieId;
   set movieId(int? movieId) => _$this._movieId = movieId;
 
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+
   ReviewBuilder();
 
   ReviewBuilder get _$this {
@@ -706,6 +723,7 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
       _id = $v.id;
       _comment = $v.comment;
       _movieId = $v.movieId;
+      _createdAt = $v.createdAt;
       _$v = null;
     }
     return this;
@@ -729,7 +747,8 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'Review', 'uid'),
             id: BuiltValueNullFieldError.checkNotNull(id, 'Review', 'id'),
             comment: BuiltValueNullFieldError.checkNotNull(comment, 'Review', 'comment'),
-            movieId: BuiltValueNullFieldError.checkNotNull(movieId, 'Review', 'movieId'));
+            movieId: BuiltValueNullFieldError.checkNotNull(movieId, 'Review', 'movieId'),
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Review', 'createdAt'));
     replace(_$result);
     return _$result;
   }
