@@ -49,7 +49,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
@@ -65,13 +65,13 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
               specifiedType: const FullType(BuiltList, const [const FullType(Movie)]))! as BuiltList<Object?>);
           break;
         case 'isLoading':
-          result.isLoading = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
+          result.isLoading = serializers.deserialize(value, specifiedType: const FullType(bool))! as bool;
           break;
         case 'selectedMovie':
           result.selectedMovie = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'page':
-          result.page = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
+          result.page = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -111,24 +111,24 @@ class _$MovieSerializer implements StructuredSerializer<Movie> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'title':
-          result.title = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.title = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'medium_cover_image':
-          result.image = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.image = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'summary':
-          result.summary = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.summary = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'large_cover_image':
-          result.largeImage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.largeImage = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -169,21 +169,21 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'username':
-          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.username = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'userId':
-          result.userId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.userId = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'photo':
-          result.photo = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
+          result.photo = serializers.deserialize(value, specifiedType: const FullType(String))! as String?;
           break;
         case 'email':
-          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -223,24 +223,24 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'uid':
-          result.uid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'id':
-          result.id = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'comment':
-          result.comment = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.comment = serializers.deserialize(value, specifiedType: const FullType(String))! as String;
           break;
         case 'movieId':
-          result.movieId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
+          result.movieId = serializers.deserialize(value, specifiedType: const FullType(int))! as int;
           break;
         case 'createdAt':
-          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(DateTime))! as DateTime;
           break;
       }
     }
@@ -322,27 +322,39 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState? _$v;
 
   ListBuilder<Review>? _reviews;
+
   ListBuilder<Review> get reviews => _$this._reviews ??= new ListBuilder<Review>();
+
   set reviews(ListBuilder<Review>? reviews) => _$this._reviews = reviews;
 
   AppUserBuilder? _user;
+
   AppUserBuilder get user => _$this._user ??= new AppUserBuilder();
+
   set user(AppUserBuilder? user) => _$this._user = user;
 
   ListBuilder<Movie>? _movies;
+
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
+
   set movies(ListBuilder<Movie>? movies) => _$this._movies = movies;
 
   bool? _isLoading;
+
   bool? get isLoading => _$this._isLoading;
+
   set isLoading(bool? isLoading) => _$this._isLoading = isLoading;
 
   int? _selectedMovie;
+
   int? get selectedMovie => _$this._selectedMovie;
+
   set selectedMovie(int? selectedMovie) => _$this._selectedMovie = selectedMovie;
 
   int? _page;
+
   int? get page => _$this._page;
+
   set page(int? page) => _$this._page = page;
 
   AppStateBuilder();
@@ -466,23 +478,33 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
   _$Movie? _$v;
 
   String? _title;
+
   String? get title => _$this._title;
+
   set title(String? title) => _$this._title = title;
 
   int? _id;
+
   int? get id => _$this._id;
+
   set id(int? id) => _$this._id = id;
 
   String? _image;
+
   String? get image => _$this._image;
+
   set image(String? image) => _$this._image = image;
 
   String? _summary;
+
   String? get summary => _$this._summary;
+
   set summary(String? summary) => _$this._summary = summary;
 
   String? _largeImage;
+
   String? get largeImage => _$this._largeImage;
+
   set largeImage(String? largeImage) => _$this._largeImage = largeImage;
 
   MovieBuilder();
@@ -579,19 +601,27 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   _$AppUser? _$v;
 
   String? _username;
+
   String? get username => _$this._username;
+
   set username(String? username) => _$this._username = username;
 
   String? _userId;
+
   String? get userId => _$this._userId;
+
   set userId(String? userId) => _$this._userId = userId;
 
   String? _photo;
+
   String? get photo => _$this._photo;
+
   set photo(String? photo) => _$this._photo = photo;
 
   String? _email;
+
   String? get email => _$this._email;
+
   set email(String? email) => _$this._email = email;
 
   AppUserBuilder();
@@ -695,23 +725,33 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
   _$Review? _$v;
 
   String? _uid;
+
   String? get uid => _$this._uid;
+
   set uid(String? uid) => _$this._uid = uid;
 
   String? _id;
+
   String? get id => _$this._id;
+
   set id(String? id) => _$this._id = id;
 
   String? _comment;
+
   String? get comment => _$this._comment;
+
   set comment(String? comment) => _$this._comment = comment;
 
   int? _movieId;
+
   int? get movieId => _$this._movieId;
+
   set movieId(int? movieId) => _$this._movieId = movieId;
 
   DateTime? _createdAt;
+
   DateTime? get createdAt => _$this._createdAt;
+
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   ReviewBuilder();
