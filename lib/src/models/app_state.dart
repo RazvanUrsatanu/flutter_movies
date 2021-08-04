@@ -17,6 +17,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   AppState._();
 
+  BuiltMap<String, AppUser> get users;
+
   BuiltList<Review> get reviews;
 
   AppUser? get user;

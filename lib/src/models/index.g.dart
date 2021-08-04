@@ -21,6 +21,9 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
   Iterable<Object?> serialize(Serializers serializers, AppState object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
+      'users',
+      serializers.serialize(object.users,
+          specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)])),
       'reviews',
       serializers.serialize(object.reviews, specifiedType: const FullType(BuiltList, const [const FullType(Review)])),
       'movies',
@@ -53,6 +56,10 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'users':
+          result.users.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)]))!);
+          break;
         case 'reviews':
           result.reviews.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [const FullType(Review)]))! as BuiltList<Object?>);
@@ -251,6 +258,8 @@ class _$ReviewSerializer implements StructuredSerializer<Review> {
 
 class _$AppState extends AppState {
   @override
+  final BuiltMap<String, AppUser> users;
+  @override
   final BuiltList<Review> reviews;
   @override
   final AppUser? user;
@@ -266,13 +275,15 @@ class _$AppState extends AppState {
   factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._(
-      {required this.reviews,
+      {required this.users,
+      required this.reviews,
       this.user,
       required this.movies,
       required this.isLoading,
       this.selectedMovie,
       required this.page})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(users, 'AppState', 'users');
     BuiltValueNullFieldError.checkNotNull(reviews, 'AppState', 'reviews');
     BuiltValueNullFieldError.checkNotNull(movies, 'AppState', 'movies');
     BuiltValueNullFieldError.checkNotNull(isLoading, 'AppState', 'isLoading');
@@ -289,6 +300,7 @@ class _$AppState extends AppState {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppState &&
+        users == other.users &&
         reviews == other.reviews &&
         user == other.user &&
         movies == other.movies &&
@@ -300,7 +312,9 @@ class _$AppState extends AppState {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc($jc(0, reviews.hashCode), user.hashCode), movies.hashCode), isLoading.hashCode),
+        $jc(
+            $jc($jc($jc($jc($jc(0, users.hashCode), reviews.hashCode), user.hashCode), movies.hashCode),
+                isLoading.hashCode),
             selectedMovie.hashCode),
         page.hashCode));
   }
@@ -308,6 +322,7 @@ class _$AppState extends AppState {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppState')
+          ..add('users', users)
           ..add('reviews', reviews)
           ..add('user', user)
           ..add('movies', movies)
@@ -321,40 +336,32 @@ class _$AppState extends AppState {
 class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   _$AppState? _$v;
 
+  MapBuilder<String, AppUser>? _users;
+  MapBuilder<String, AppUser> get users => _$this._users ??= new MapBuilder<String, AppUser>();
+  set users(MapBuilder<String, AppUser>? users) => _$this._users = users;
+
   ListBuilder<Review>? _reviews;
-
   ListBuilder<Review> get reviews => _$this._reviews ??= new ListBuilder<Review>();
-
   set reviews(ListBuilder<Review>? reviews) => _$this._reviews = reviews;
 
   AppUserBuilder? _user;
-
   AppUserBuilder get user => _$this._user ??= new AppUserBuilder();
-
   set user(AppUserBuilder? user) => _$this._user = user;
 
   ListBuilder<Movie>? _movies;
-
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
-
   set movies(ListBuilder<Movie>? movies) => _$this._movies = movies;
 
   bool? _isLoading;
-
   bool? get isLoading => _$this._isLoading;
-
   set isLoading(bool? isLoading) => _$this._isLoading = isLoading;
 
   int? _selectedMovie;
-
   int? get selectedMovie => _$this._selectedMovie;
-
   set selectedMovie(int? selectedMovie) => _$this._selectedMovie = selectedMovie;
 
   int? _page;
-
   int? get page => _$this._page;
-
   set page(int? page) => _$this._page = page;
 
   AppStateBuilder();
@@ -362,6 +369,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   AppStateBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _users = $v.users.toBuilder();
       _reviews = $v.reviews.toBuilder();
       _user = $v.user?.toBuilder();
       _movies = $v.movies.toBuilder();
@@ -390,6 +398,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     try {
       _$result = _$v ??
           new _$AppState._(
+              users: users.build(),
               reviews: reviews.build(),
               user: _user?.build(),
               movies: movies.build(),
@@ -399,6 +408,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'users';
+        users.build();
         _$failedField = 'reviews';
         reviews.build();
         _$failedField = 'user';
@@ -478,33 +489,23 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
   _$Movie? _$v;
 
   String? _title;
-
   String? get title => _$this._title;
-
   set title(String? title) => _$this._title = title;
 
   int? _id;
-
   int? get id => _$this._id;
-
   set id(int? id) => _$this._id = id;
 
   String? _image;
-
   String? get image => _$this._image;
-
   set image(String? image) => _$this._image = image;
 
   String? _summary;
-
   String? get summary => _$this._summary;
-
   set summary(String? summary) => _$this._summary = summary;
 
   String? _largeImage;
-
   String? get largeImage => _$this._largeImage;
-
   set largeImage(String? largeImage) => _$this._largeImage = largeImage;
 
   MovieBuilder();
@@ -601,27 +602,19 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   _$AppUser? _$v;
 
   String? _username;
-
   String? get username => _$this._username;
-
   set username(String? username) => _$this._username = username;
 
   String? _userId;
-
   String? get userId => _$this._userId;
-
   set userId(String? userId) => _$this._userId = userId;
 
   String? _photo;
-
   String? get photo => _$this._photo;
-
   set photo(String? photo) => _$this._photo = photo;
 
   String? _email;
-
   String? get email => _$this._email;
-
   set email(String? email) => _$this._email = email;
 
   AppUserBuilder();
@@ -725,33 +718,23 @@ class ReviewBuilder implements Builder<Review, ReviewBuilder> {
   _$Review? _$v;
 
   String? _uid;
-
   String? get uid => _$this._uid;
-
   set uid(String? uid) => _$this._uid = uid;
 
   String? _id;
-
   String? get id => _$this._id;
-
   set id(String? id) => _$this._id = id;
 
   String? _comment;
-
   String? get comment => _$this._comment;
-
   set comment(String? comment) => _$this._comment = comment;
 
   int? _movieId;
-
   int? get movieId => _$this._movieId;
-
   set movieId(int? movieId) => _$this._movieId = movieId;
 
   DateTime? _createdAt;
-
   DateTime? get createdAt => _$this._createdAt;
-
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   ReviewBuilder();

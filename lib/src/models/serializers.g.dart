@@ -11,6 +11,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AppUser.serializer)
       ..add(Movie.serializer)
       ..add(Review.serializer)
+      ..addBuilderFactory(const FullType(BuiltMap, const [const FullType(String), const FullType(AppUser)]),
+          () => new MapBuilder<String, AppUser>())
       ..addBuilderFactory(const FullType(BuiltList, const [const FullType(Review)]), () => new ListBuilder<Review>())
       ..addBuilderFactory(const FullType(BuiltList, const [const FullType(Movie)]), () => new ListBuilder<Movie>()))
     .build();
